@@ -1,0 +1,9 @@
+Things learnt:
+1. BrowserRouter component
+2. items-center is align-items: center
+3. sm: is for media with minimum 640px max to any i.e <640px
+4. flex-col and flex-row: col-direction and row-direction
+5. h-screen : to make an element span the entire height of the viewport.
+To Check:
+1. gap: space between rows and columns
+2. flex-1
