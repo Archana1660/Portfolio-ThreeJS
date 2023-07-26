@@ -1,9 +1,38 @@
 Things learnt:
-1. BrowserRouter component
-2. items-center is align-items: center
-3. sm: is for media with minimum 640px max to any i.e <640px
-4. flex-col and flex-row: col-direction and row-direction
-5. h-screen : to make an element span the entire height of the viewport.
+
+1. REACT:
+        1_1.  BrowserRouter component
+ 
+
+2.  Tailwind:
+
+        2_1.   tems-center is align-items: center. This is for vertical positioning of elements
+
+        2_2.   sm: is for media with minimum 640px max to any i.e <640px
+
+        2_3.   flex-col and flex-row: col-direction and row-direction
+
+        2_4. h-screen : to make an element span the entire height of the viewport.
+
+        2_5. inset: properties written is same as the padding and margin (top, left, bottom, right)
+
+                    - it's like margin, need to check the difference yet
+
+                    - it has inset-block-start: applies on the top-left edge
+
+                    - it has inset-block-end: applies on the bottom-left edge
+
+                    - it has inset-inline-start: applies on the left side
+
+                    - it has inset-inline-end: applies on the right side
+
+                    - it has inset-inline: applies to both left and right side of the element
+
+        2_6.    max-w-xl: to set maximum width of an element
+
+ 
+
 To Check:
+
 1. gap: space between rows and columns
 2. flex-1
