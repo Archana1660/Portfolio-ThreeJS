@@ -1,0 +1,27 @@
+1. <primitive>: refer link- https://threejs.org/manual/#en/primitives
+
+- Primitives are generally 3D shapes that are generated at runtime with a bunch of parameters.
+- It's especially common to use primitives to experiment and get started with 3D.
+- exmaples: - BoxGeometry (A Box), PlaneGeometry (A 2D plane), WireframeGeometry
+- with react we can use in
+
+###
+
+    const mesh = new THREE.Mesh(geometry, material)
+    function Component() {
+      return <primitive object={mesh} position={[10, 0, 0]} />
+
+###
+
+2. <Canvas>: The Canvas object is where you start to define your React Three Fiber Scene.
+
+- All you need to do is set the canvas frameloop prop to demand. It will render frames whenever it detects prop changes throughout the component tree. Here props related to <Canvas/> component
+  <Canvas frameloop="demand"> values-always/demand/never
+
+3. <OrbitControls>
+   - minPolarAngle: How far you can orbit vertically, lower limit. Range is 0 to Math.PI radians, and default is 0
+   - maxPolarAngle: How far you can orbit vertically, upper limit. Range is 0 to Math.PI radians, and default is Math.PI
+
+4. useProgress from react/three/drei to show progress
+5. <Html></Html> for the html to add in canvas
+6. <motion.div/> from framer-motion
