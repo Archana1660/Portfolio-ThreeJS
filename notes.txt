@@ -21,6 +21,7 @@ Things learnt:
                 function Loading() {
                 return <h2>🌀 Loading...</h2>;
                 }
+        1_3: HOC:
 
 2.  Tailwind:
 
@@ -47,10 +48,11 @@ Things learnt:
                     - it has inset-inline: applies to both left and right side of the element
 
         2_6.    max-w-xl: to set maximum width of an element
-
+        2_7.    leading - line-height
  
 
 To Check:
 
 1. gap: space between rows and columns
 2. flex-1
+3.

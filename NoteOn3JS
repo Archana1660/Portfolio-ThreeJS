@@ -25,3 +25,4 @@
 4. useProgress from react/three/drei to show progress
 5. <Html></Html> for the html to add in canvas
 6. <motion.div/> from framer-motion
+7. variant:
