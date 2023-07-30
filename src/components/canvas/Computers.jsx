@@ -24,7 +24,6 @@ const Computers = () => {
 
     return () => {
       // Cleanup function to remove the event listener on component unmount
-      console.log('remove')
       mediaQuery.removeEventListener('change', handleMediaQueryChange)
     }
     
