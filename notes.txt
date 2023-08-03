@@ -49,6 +49,12 @@ Things learnt:
 
         2_6.    max-w-xl: to set maximum width of an element
         2_7.    leading - line-height
+        2_8.    space-y-2: margin-top: 2px - Control the horizontal/vertical space between elements
+
+                                                - margin to all-but-the-first-item in the group
+
+        2_9:    tracking-wider: letter-spacing: 0.05em;
+
  
 
 To Check:
