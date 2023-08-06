@@ -51,4 +51,4 @@ Following project showcase my skills and experience through real-world examples 
   )
 }
 
-export default SectionWrapper(Works, '');
+export default SectionWrapper(Works, 'work');
