@@ -41,3 +41,5 @@
    >   <mesh />
 
    > </Float>
+
+9. useFrame : This hook allows you to execute code on every rendered frame, like running effects, updating controls, and so on. You receive the state (same as useThree) and a clock delta. Your callback function will be invoked just before a frame is rendered. When the component unmounts it is unsubscribed automatically from the render-loop.
