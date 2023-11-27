@@ -1,6 +1,6 @@
 import { Tilt } from 'react-tilt'
 import { motion } from 'framer-motion'
-
+import PropTypes from 'prop-types'
 import { styles } from '../styles'
 import { services } from '../constants'
 import { fadeIn, textVariant } from '../utils/motion'
@@ -17,25 +17,31 @@ const ServiceCard = ({index, title, icon}) => {
    </Tilt>
 }
 
+ServiceCard.propTypes = {
+  index: PropTypes.string,
+  title: PropTypes.string,
+icon: PropTypes.string
+}
 const About = () => {
   return (
     <>
     <motion.div variants={textVariant()}>
-      <p className={styles.sectionSubText}>Introduction</p>
-      <h2 className={styles.sectionHeadText}>Overview.</h2>
+      <h2 className={styles.sectionSubText}>Introduction</h2>
+      <h2 className={styles.sectionHeadText}>About me.</h2>
     </motion.div>
-
+      <div className='flex justify-between'>
       <motion.p
         variants={fadeIn("", "", 0.1, 1)}
-      className='mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]'>
-        The most impressive websites in the world use 3D graphics and animations to bring their content to life. Learn how to build your own ThreeJS 3D Developer Portfolio today! 
-      </motion.p>
+      className='mt-4 text-secondary text-[17px] w-2/4 leading-[30px]'>
+        Front-end developer with 6+ years of experience in creating User Interfaces using HTML5, CSS3, JavaScript, jQuery, and
+ReactJS. Seeking to leverage expertise in to contribute effectively to a dynamic tech company   </motion.p>
       
-      <div className="mt-20 flex flex-wrap gap-10">
+      <div className="flex justify-center w-2/4">
         {services.map((service, index) => {
        return   <ServiceCard key={ service.title} index={index} {...service} />
         })}
-      </div>
+        </div>
+        </div>
     </>
   )
 }
