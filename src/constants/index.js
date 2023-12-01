@@ -11,9 +11,8 @@ import {
     indegene,
     gopoolit,
     happiest_minds_technology,
-    carrent,
-    jobit,
-    tripguide,
+    social_media,
+    e_com,
     threejs,
 } from "../assets";
 
@@ -152,30 +151,30 @@ const testimonials = [
 
 const projects = [
     {
-        name: "Car Rent",
+        name: "Social Media",
         description:
-            "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
+            "Web-based platform that allows users to post images and text and donate to the charities linked to GoPoolit platform",
         tags: [
             {
                 name: "react",
                 color: "blue-text-gradient",
             },
             {
-                name: "mongodb",
+                name: "material-ui",
                 color: "green-text-gradient",
             },
             {
-                name: "tailwind",
+                name: "redux",
                 color: "pink-text-gradient",
             },
         ],
-        image: carrent,
-        source_code_link: "https://github.com/",
+        image: social_media,
+        website_link: "https://gopoolit.com/"
     },
     {
-        name: "Job IT",
+        name: "Shopping",
         description:
-            "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
+            "Web application that enables users to shop products of their choice online.",
         tags: [
             {
                 name: "react",
@@ -186,34 +185,16 @@ const projects = [
                 color: "green-text-gradient",
             },
             {
-                name: "scss",
+                name: "tailwind",
                 color: "pink-text-gradient",
             },
         ],
-        image: jobit,
-        source_code_link: "https://github.com/",
+        image: e_com,
+        source_code_link: "https://github.com/Archana1660/my-ecom-project",
+        website_link: "https://cheerful-biscotti-e4e34f.netlify.app/"
+
     },
-    {
-        name: "Trip Guide",
-        description:
-            "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
-        tags: [
-            {
-                name: "nextjs",
-                color: "blue-text-gradient",
-            },
-            {
-                name: "supabase",
-                color: "green-text-gradient",
-            },
-            {
-                name: "css",
-                color: "pink-text-gradient",
-            },
-        ],
-        image: tripguide,
-        source_code_link: "https://github.com/",
-    },
+
 ];
 
 export { services, technologies, experiences, testimonials, projects };
