@@ -1,14 +1,14 @@
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component'
 import { motion } from 'framer-motion';
-
+import PropTypes from 'prop-types';
 import 'react-vertical-timeline-component/style.min.css'
 
-import { styles } from '../styles';
 import { experiences } from '../constants';
+import { styles } from '../styles';
 import { SectionWrapper } from '../hoc';
 import { textVariant } from '../utils/motion';
 
-const ExperienceCard = ({experience}) => {
+export const ExperienceCard = ({experience}) => {
   return<VerticalTimelineElement
     contentStyle={{ background: '#1d1836', color: '#ffffff' }} contentArrowStyle={{ borderRight: '7px solid #232631' }}
     date={experience.date}
@@ -33,6 +33,16 @@ const ExperienceCard = ({experience}) => {
 </VerticalTimelineElement>
 }
 
+ExperienceCard.propTypes = {
+  experience: PropTypes.shape({
+    date: PropTypes.string,
+  iconBg: PropTypes.string,
+  icon: PropTypes.string,
+  company_name:PropTypes.string,
+  title:PropTypes.string,
+  points:PropTypes.array,
+  })
+}
 const Experience = () => {
   return (
     <>

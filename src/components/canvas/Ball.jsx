@@ -1,10 +1,11 @@
 import { Suspense } from 'react'
 import { Canvas } from '@react-three/fiber'
 import { Decal, Float, OrbitControls, Preload, useTexture } from '@react-three/drei'
+import PropTypes from "prop-types"
 import Loader from '../Loader'
 
-const Ball = (props) => {
-  const [decal] = useTexture([props.imgUrl])
+export const Ball = ({imgUrl}) => {
+  const [decal] = useTexture([imgUrl])
   return (
     //Float is to hover the 3D object
     <Float speed={.75} rotationIntensity={1} floatIntensity={2}>
@@ -31,7 +32,11 @@ const Ball = (props) => {
   )
 }
 
-const BallCanvas = ({icon}) => {
+Ball.propTypes = {
+  imgUrl:PropTypes.string
+}
+
+export const BallCanvas = ({icon}) => {
   return <Canvas frameloop='demand'>
     <Suspense fallback={<Loader/>}>
       <OrbitControls enableZoom={false} />
@@ -40,4 +45,7 @@ const BallCanvas = ({icon}) => {
     <Preload all/>
   </Canvas>
 }
-export default BallCanvas
+
+BallCanvas.propTypes = {
+icon:PropTypes.string
+}

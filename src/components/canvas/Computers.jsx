@@ -4,7 +4,7 @@ import { OrbitControls, Preload, useGLTF } from '@react-three/drei';
 
 import Loader from '../Loader';
 
-const Computers = () => {
+export const Computers = () => {
   const computer = useGLTF('./desktop_pc/scene.gltf')
   const [isMobile, setIsMobile] = useState(false);
 
@@ -55,7 +55,7 @@ const Computers = () => {
   )
 }
 
-const ComputersCanvas = () => {
+export const ComputersCanvas = () => {
   return (
     <Canvas
       frameloop='demand'
@@ -76,5 +76,3 @@ const ComputersCanvas = () => {
   </Canvas>
 )  
 }
-
-export default ComputersCanvas

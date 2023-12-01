@@ -1,11 +1,11 @@
-import React from 'react'
 import { motion } from 'framer-motion'
+import PropTypes from 'prop-types'
 import { styles } from '../styles'
 import { SectionWrapper } from '../hoc'
 import { fadeIn, textVariant } from '../utils/motion'
 import { testimonials } from '../constants'
 
-const FeedbackCard = ({ index, testimonial, name, designation, company, image }) => (
+export const FeedbackCard = ({ index, testimonial, name, designation, company, image }) => (
   <motion.div variants={fadeIn('', 'spring', index * 0.5, 0.75)} className='bg-black-100 p-10 rounded-3xl xs:w-[320px] w-full'>
     <p className='text-white font-black text-[48px]'>"</p>
     <div className="mt-1">
@@ -22,6 +22,16 @@ const FeedbackCard = ({ index, testimonial, name, designation, company, image })
     </div>
   </motion.div>
 )
+
+FeedbackCard.propTypes = {
+  index: PropTypes.number,
+  testimonial: PropTypes.string,
+  name: PropTypes.string,
+  designation: PropTypes.string,
+  company: PropTypes.string,
+  image: PropTypes.string,
+}
+
 const Feedbacks = () => {
   return (
     //bg-black-100
