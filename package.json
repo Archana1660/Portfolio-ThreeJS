@@ -1,12 +1,12 @@
 {
-  "homepage":"https://archana1660.github.io/Portfolio-ThreeJS/",
+  "homepage": "https://archana1660.github.io/Portfolio-ThreeJS/",
   "name": "javascript-mastery-3js",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "predeploy":"npm run build",
-    "deploy":"gh-pages -d dist",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
@@ -17,6 +17,7 @@
     "@react-three/drei": "^9.79.3",
     "@react-three/fiber": "^8.13.5",
     "@types/three": "^0.154.0",
+    "axios": "^1.6.2",
     "framer-motion": "^10.13.0",
     "maath": "^0.7.0",
     "prop-types": "^15.8.1",
