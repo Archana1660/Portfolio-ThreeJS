@@ -21,9 +21,8 @@ import happiest_minds_technology from "./company/happiest_minds_technology.jpg";
 import indegene from "./company/indegene_logo.jpg";
 import gopoolit from "./company/gopoolit.png";
 
-import carrent from "./carrent.png";
-import jobit from "./jobit.png";
-import tripguide from "./tripguide.png";
+import social_media from "./social_media.png";
+import e_com from "./e_com.png";
 
 import info from "./info.png";
 
@@ -48,8 +47,6 @@ export {
   happiest_minds_technology,
   indegene,
   gopoolit,
-  carrent,
-  jobit,
-  tripguide,
-  info
+  social_media,
+  e_com,
 };
