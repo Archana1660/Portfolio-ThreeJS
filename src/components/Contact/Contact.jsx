@@ -1,35 +1,23 @@
-import {useState} from 'react'
+import {useEffect, useState} from 'react'
 import { motion } from 'framer-motion'
-import emailjs from '@emailjs/browser'
-import { styles } from '../styles'
-import { EarthCanvas } from './canvas'
-import { SectionWrapper } from '../hoc'
-import { slideIn } from '../utils/motion'
-import { HelperText } from '../utils/HelperText'
+import { styles } from '../../styles'
+import { EarthCanvas } from '../canvas'
+import { SectionWrapper } from '../../hoc'
+import { slideIn } from '../../utils/motion'
+import { HelperText } from '../../utils/HelperText'
+import { useFormSubmission } from './formUtils'
 
 const Contact = () => {
-  const initialValues = {
+  const [theForm, setTheForm] = useState({
     name: '',
     email: '',
     message: '',
-  }
-  const [theForm, setTheForm] = useState(initialValues)
+  })
   const [loading, setLoading] = useState(false)
-  const [formErrorMessage, setErrorMessage] = useState({})
+  const [formErrorMessage, setFormErrorMessage] = useState({})
+  const [successMessage, setsuccessMessage] = useState(false)
 
-  function validateForm(value) {
-    let errors={}
-    if (value.name.length < 3) {
-      errors.name = 'error'
-    }
-    if (!value.email) {
-      errors.email = null
-    }
-    if (!value.message.length < 4) {
-      errors.message = 'error'
-    }
-    return errors
-  }
+  const validateForm = useFormSubmission()
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -38,9 +26,23 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setErrorMessage(validateForm(theForm))   
+    setFormErrorMessage(validateForm(theForm))  
+    setsuccessMessage(true) // for demo purpose always show successful mail delivery
+    setLoading(true)
   }
 
+  useEffect(() => {
+    if (successMessage) {
+      setLoading(false)
+      setTheForm({
+    name: '',
+    email: '',
+    message: '',
+  })
+    } 
+
+  }, [successMessage])
+  
   let isEnabled = theForm.name && theForm.email && theForm.message
   
   return (
@@ -60,7 +62,7 @@ const Contact = () => {
             <span className={`text-xs ${(formErrorMessage.name !== 'error')?`text-white-500`:`text-red-500`}`}>Please enter minimum 3 letters</span>
            
         </label>
-          <label htmlFor="name" className='flex flex-col'>
+          <label htmlFor="email" className='flex flex-col'>
             <div className='relative inline-block group'>
               <span className='text-white font-medium mb-4'>Your email</span>
               <HelperText message={`Please enter valid email id. e.g. xyz@gmail.com`} />
@@ -70,7 +72,7 @@ const Contact = () => {
             <input type="email" name="email" value={theForm.email} onChange={handleChange} placeholder="Email" className='bg-tetiary py-4 px-6 placeholder:text-secondary text-white rounder-lg outlined-none border-none font-medum' />
             <span className={`text-xs ${(formErrorMessage.email !== 'error')?`text-white-500`:`text-red-500`}`}>Please enter valid email address</span>
         </label>
-          <label htmlFor="name" className='flex flex-col'>
+          <label htmlFor="message" className='flex flex-col'>
             <div className='relative inline-block group'>
               <span className='text-white font-medium mb-4'>Your message</span>
               <HelperText message={`Please enter minimum 4 letters`} />
@@ -83,12 +85,18 @@ const Contact = () => {
             
           
           </label>
-          <button type='submit' className='bg-tertiary py-3 px-8 outline-none w-fit text-white font-bold shadow-md shadow-primary rounded-xl' disabled={!isEnabled}>{ loading ? 'Sending...': 'Send'}</button>
-      </form>
+          <button type='submit' className='bg-tertiary py-3 px-8 outline-none w-fit text-white font-bold shadow-md shadow-primary rounded-xl disabled:bg-slate-400 disabled:text-black' disabled={!isEnabled}>{ loading ? 'Sending...': 'Send'}</button>
+          <p className={` inline text-green-500 text-sm ${successMessage ? `block`: `hidden`}`}>This is a dummy success message! To contact, please refer my resume.</p>
+      
+        </form>
       </motion.div>
       <motion.div variants={slideIn('right', 'tween', 0.2, 1)} className='xl:flex-1 xl:h-auto md-h-[550px] h-[350px]'>
       <EarthCanvas/>
       </motion.div>
+      <div>
+
+      </div>
+
     </div>
   )
 }
