@@ -24,6 +24,8 @@ import gopoolit from "./company/gopoolit.png";
 import social_media from "./social_media.png";
 import e_com from "./e_com.png";
 
+import info from "./info.png";
+
 export {
   logo,
   backend,
