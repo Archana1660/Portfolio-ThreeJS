@@ -18,7 +18,7 @@ export const ServiceCard = ({index, title, icon}) => {
 }
 
 ServiceCard.propTypes = {
-  index: PropTypes.string,
+  index: PropTypes.number,
   title: PropTypes.string,
 icon: PropTypes.string
 }

@@ -34,9 +34,9 @@ export const ProjectCard = ({ index, name, description, tags, image, source_code
 
 ProjectCard.propTypes = {
   index: PropTypes.number,
-  name: PropTypes.name,
+  name: PropTypes.string,
   description: PropTypes.string,
-  tags: PropTypes.string,
+  tags: PropTypes.array,
   image: PropTypes.string,
   source_code_link: PropTypes.string,
   website_link: PropTypes.string
