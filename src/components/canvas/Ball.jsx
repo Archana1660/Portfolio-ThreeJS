@@ -2,6 +2,7 @@ import { Suspense } from 'react'
 import { Canvas } from '@react-three/fiber'
 import { Decal, Float, OrbitControls, Preload, useTexture } from '@react-three/drei'
 import PropTypes from "prop-types"
+
 import Loader from '../Loader'
 
 export const Ball = ({imgUrl}) => {
@@ -47,5 +48,5 @@ export const BallCanvas = ({icon}) => {
 }
 
 BallCanvas.propTypes = {
-icon:PropTypes.string
+  icon:PropTypes.string
 }

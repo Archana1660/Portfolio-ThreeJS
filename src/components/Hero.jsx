@@ -1,5 +1,6 @@
-import { styles } from "../styles";
 import { motion } from "framer-motion";
+
+import { styles } from "../styles";
 
 export const Hero = () => {
   return (
@@ -16,8 +17,8 @@ export const Hero = () => {
             Hi, I&apos;m <span className="text-[#915eff]">Archana</span>
           </h1>
           <p className={`${styles.heroSubText} mt-2 text-white-100`}>
-            I develop 3D visual user <br className="sm:block hidden" />
-            interfaces and web applications
+            Passionate about 3D visuals and animations.<br className="sm:block hidden" />
+            I develop  user interfaces and web applications.
           </p>
         </div>
       </div>

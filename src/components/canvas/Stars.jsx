@@ -8,8 +8,8 @@ export const Stars = (props) => {
   const sphere = random.inSphere(new Float32Array(5000), { radius: 1.2 })
   
   useFrame((state, delta)=> {
-  ref.current.rotation.x -= delta / 10;
-  ref.current.rotation.y -= delta / 10;
+    ref.current.rotation.x -= delta / 10;
+    ref.current.rotation.y -= delta / 10;
   })
   
   return (
@@ -22,12 +22,14 @@ export const Stars = (props) => {
 }
 
 export const StarsCanvas =() => {
-  return <div className="w-full h-full absolute inset-0 z-[-1]">
-    <Canvas camera={{position:[0,0,1]}}>
-      <Suspense fallback={null}>
-        <Stars/>
-      </Suspense>
-      <Preload all/>
-   </Canvas>
- </div>
+  return (
+    <div className="w-full h-full absolute inset-0 z-[-1]">
+      <Canvas camera={{position:[0,0,1]}}>
+        <Suspense fallback={null}>
+          <Stars/>
+        </Suspense>
+        <Preload all/>
+      </Canvas>
+    </div>
+  )
 }

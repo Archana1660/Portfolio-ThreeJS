@@ -1,5 +1,6 @@
 import {useEffect, useState} from 'react'
 import { motion } from 'framer-motion'
+
 import { styles } from '../../styles'
 import { EarthCanvas } from '../canvas'
 import { SectionWrapper } from '../../hoc'
@@ -35,12 +36,11 @@ const Contact = () => {
     if (successMessage) {
       setLoading(false)
       setTheForm({
-    name: '',
-    email: '',
-    message: '',
-  })
+        name: '',
+        email: '',
+        message: '',
+      })
     } 
-
   }, [successMessage])
   
   let isEnabled = theForm.name && theForm.email && theForm.message
@@ -50,7 +50,7 @@ const Contact = () => {
       <motion.div variants={slideIn('left', 'tween', 0.2, 1)} className='flex-[0.75] bg-black-100 p-8 rounded-2xl'>
         <p className={styles.sectionSubText}>Get in touch</p>
         <h3 className={styles.sectionHeadText}>Contact.</h3>
-      <form onSubmit={handleSubmit} className='mt-12 flex flex-col gap-8'
+        <form onSubmit={handleSubmit} className='mt-12 flex flex-col gap-8'
       >
         <label htmlFor="name" className='flex flex-col'>
             <div>
@@ -91,12 +91,10 @@ const Contact = () => {
         </form>
       </motion.div>
       <motion.div variants={slideIn('right', 'tween', 0.2, 1)} className='xl:flex-1 xl:h-auto md-h-[550px] h-[350px]'>
-      <EarthCanvas/>
+        <EarthCanvas/>
       </motion.div>
       <div>
-
       </div>
-
     </div>
   )
 }

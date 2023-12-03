@@ -70,9 +70,9 @@ export const ComputersCanvas = () => {
           maxPolarAngle={Math.PI/2} //hold vertical moment towards top
           minPolarAngle={Math.PI / 2} //hold vertical moment towards bottom
         />
-<Computers/>
+      <Computers/>
       </Suspense>
       <Preload all/>
-  </Canvas>
+    </Canvas>
 )  
 }

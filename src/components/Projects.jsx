@@ -13,7 +13,7 @@ export const ProjectCard = ({ index, name, description, tags, image, source_code
     <div className="bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full">
       <div className="relative w-full h-[230px]">
         <img src={image} alt={name} className='w-full h-full object-cover rounded-2xl' />
-        {source_code_link ? <div className="absolute inset-0 flex justify-end  m-3 card-img_hover">
+        {source_code_link ? <div className="absolute inset-0 flex justify-end m-3">
           <div onClick={() => window.open(source_code_link, "_blank")} className='black-gradient w-10 h-10 rounder-full flex justify-center items-center cursor-pointer'>
             <img src={github} alt="github" className='w-1/2 h-1/2 object-contain' />
           </div>
@@ -28,7 +28,7 @@ export const ProjectCard = ({ index, name, description, tags, image, source_code
           <p key={tag.name} className={`text-[14px] ${tag.color}`}>#{tag.name}</p>)}
       </div>
       <div className="text-xs pt-1" >Website: <a href={website_link} rel="noreferrer" target='_blank'>{`${website_link}`}</a></div>
-  </div>
+    </div>
   </motion.div>
 }
 
@@ -42,24 +42,25 @@ ProjectCard.propTypes = {
   website_link: PropTypes.string
 }
 
-const Works = () => {
+const Projects = () => {
   return (
     <>
-    <motion.div variants={textVariant()}>
-      <p className={styles.sectionSubText}>My Projects</p>
-      <h2 className={styles.sectionHeadText}>Projects.</h2>
-    </motion.div>
-    <div className="w-full flex">
+      <motion.div variants={textVariant()}>
+        <p className={styles.sectionSubText}>My Projects</p>
+        <h2 className={styles.sectionHeadText}>Projects.</h2>
+      </motion.div>
+      <div className="w-full flex">
         <motion.p variants={fadeIn("","", 0.1, 1)} className='mt-3 text-secondary text-[17px] max-w-3xl leading-[30px]'>
-Following project showcase my skills and experience through real-world examples of my work
+            Following project showcase my skills and experience through real-world examples of my work
         </motion.p>
       </div>
-      <div className="mt-20 flex justify-evenly flex-wrap ">
+      <div className="mt-20 flex justify-evenly flex-wrap">
         {projects.map((project, index) => {
           return <ProjectCard key={`project-${index}`} index={ index}{...project} />
-        })}</div>
+        })}
+      </div>
     </>
   )
 }
 
-export default SectionWrapper(Works, 'work');
+export default SectionWrapper(Projects, 'work');
