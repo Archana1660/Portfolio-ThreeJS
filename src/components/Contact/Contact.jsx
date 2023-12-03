@@ -86,7 +86,7 @@ const Contact = () => {
           
           </label>
           <button type='submit' className='bg-tertiary py-3 px-8 outline-none w-fit text-white font-bold shadow-md shadow-primary rounded-xl disabled:bg-slate-400 disabled:text-black' disabled={!isEnabled}>{ loading ? 'Sending...': 'Send'}</button>
-          <p className={` inline text-green-500 text-sm ${successMessage ? `block`: `hidden`}`}>This is a dummy success message! To contact, please refer my resume.</p>
+          <p className={` inline text-green-500 text-sm ${successMessage ? `block`: `hidden`}`}>This is a dummy success message! To contact, please refer my resume. Thank you!</p>
       
         </form>
       </motion.div>
