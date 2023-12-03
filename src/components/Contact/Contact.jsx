@@ -59,7 +59,7 @@ const Contact = () => {
 
             </div>
             <input type="text" name="name" value={theForm.name} onChange={handleChange} placeholder="Name" className='bg-tetiary py-4 px-6 placeholder:text-secondary text-white rounder-lg outlined-none border-none font-medum' />
-            <span className={`text-xs ${(formErrorMessage.name !== 'error')?`text-white-500`:`text-red-500`}`}>Please enter minimum 3 letters</span>
+            <span className={`text-xs ${(formErrorMessage.name !== 'error')?'text-white-500':'text-red-500'}`}>Please enter minimum 3 letters</span>
            
         </label>
           <label htmlFor="email" className='flex flex-col'>
@@ -70,7 +70,7 @@ const Contact = () => {
               
             </div>
             <input type="email" name="email" value={theForm.email} onChange={handleChange} placeholder="Email" className='bg-tetiary py-4 px-6 placeholder:text-secondary text-white rounder-lg outlined-none border-none font-medum' />
-            <span className={`text-xs ${(formErrorMessage.email !== 'error')?`text-white-500`:`text-red-500`}`}>Please enter valid email address</span>
+            <span className={`text-xs ${(formErrorMessage.email !== 'error')?'text-white-500':'text-red-500'}`}>Please enter valid email address</span>
         </label>
           <label htmlFor="message" className='flex flex-col'>
             <div className='relative inline-block group'>
@@ -81,7 +81,7 @@ const Contact = () => {
             </div>
             <textarea rows="7" name="message" value={theForm.message} onChange={handleChange} placeholder="Message"
             className='bg-tetiary px-6 placeholder:text-secondary text-white rounder-lg outlined-none border-none font-medum'/>
-           <span className={`text-xs ${(formErrorMessage.message !== 'error')?`text-white-500`:`text-red-500`}`}>Please enter your message</span>
+           <span className={`text-xs ${(formErrorMessage.message !== 'error')?'text-white-500':'text-red-500'}`}>Please enter your message</span>
             
           
           </label>
